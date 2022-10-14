@@ -1,0 +1,30 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page session="false"   pageEncoding="UTF-8"%>
+<%@ taglib prefix = "c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<c:set var = "path" value = "${pageContext.request.contextPath   }" />
+
+<c:out value = "${path }" />
+
+<html>
+<head>
+	<title>Home</title>
+</head>
+<body>
+<h1>
+	Hello world!  
+</h1>
+
+<img alt="home" src="resources/Flowser2.jpg" /> <p>
+<img alt="house" src="images/1.jpg" />
+<img alt="house2" src="kosaData/2.jpg" />
+
+
+<P>  The time on the server is ${time}. </P>
+<div>
+	name: ${name } <br>
+	number : ${ num }<br>
+	su : ${ su }
+</div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+package ex01.di.annot;
+
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class JavaConfig {
+
+	public MyCats cat1() {
+		
+		
+		MyCats myCats = new MyCats("≥…¿Ã", 12, "");
+		
+		return myCats;
+	}
+}

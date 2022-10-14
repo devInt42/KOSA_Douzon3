@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<title>ex04_js.html</title>
+
+<script type="text/javascript">
+	function countIncrease() {
+		// var  vs   let   vs  const  
+		/* alert("innerHTML : "  + document.body.innerHTML + '\n\n\n'
+				+ "innerText : " + document.body.innerText 		
+		); */
+	
+		let  list = ' ' ;
+		list += "<ul>";
+		list += "<li>Hello</li>";
+		list += "<li>Hi</li>";
+		list += "<li>Good-By</li>";
+		list += "<li>안녕</li>";
+		list += "</ul>"
+		
+		//document.body.innerHTML = list;
+		//document.getElementById("div").innerHTML = list;   // js
+		document.getElementById("div").innerHTML = list;
+		
+		//document.querySelector("#div").innerHTML = list;   // css
+
+		//var num = document.getElementById("countSpan");   // js
+		let  num = document.getElementsByClassName("countSpan");   // js
+		alert(num.innerHTML);
+		//let  num = document.querySelector("#countSpan");   //  document.querySelector(".countSpan");   //document.querySelector("div");
+		
+		// alert( parseInt(num.innerHTML)  );
+		num.innerHTML = parseInt(num.innerHTML) + 1;
+	}
+</script>
+
+</head>
+<body>
+	<span id="countSpan"  class="countSpan">0</span> 번 클릭 &nbsp;&nbsp;
+	<input type="button"  value="Click" onclick="countIncrease()">
+	<hr>
+	Good!!! <br />
+	<h5>미리 축하합니다~~~~~ 잘해봅시다.</h5>
+	
+	<div id="div"></div>
+</body>
+</html>

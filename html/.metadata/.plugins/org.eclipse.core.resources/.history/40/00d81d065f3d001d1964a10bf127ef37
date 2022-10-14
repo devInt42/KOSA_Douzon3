@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>address.html</title>
+<style type="text/css">
+iframe {
+width : 500px;
+height : 500px;
+}
+</style>
+</head>
+<body>
+<br>
+	화면 꾸미기
+	
+	지도 : 우리집 방문 (ajax 이용)
+	<iframe id = "myhome">
+	
+	</iframe>
+</body>
+</html>

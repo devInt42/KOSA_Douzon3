@@ -1,0 +1,11 @@
+package ex01.di;
+
+public class MessageImpl implements IMessage {
+
+	@Override
+	public void sayHello() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

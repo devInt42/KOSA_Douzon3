@@ -1,0 +1,24 @@
+package ex02.quiz;
+
+public class StudentViewImpl extends PersonImpl{
+	private PersonImpl person;
+	
+	//setter로 주입
+	public void setPerson(PersonImpl person) {
+		this.person = person;
+	}
+	public StudentImpl() {
+	}
+	public StudentImpl(String name, String age, String sex, String job) {
+		super();
+		this.name = name;
+		this.age = age;
+		this.sex = sex;
+	}
+	@Override
+	public void print() {
+		System.out.println("직업 : " + 	person.getJob());
+		super.print();
+	}
+
+}

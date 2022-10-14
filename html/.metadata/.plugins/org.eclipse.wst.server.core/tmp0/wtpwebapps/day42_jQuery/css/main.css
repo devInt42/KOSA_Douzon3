@@ -1,0 +1,10 @@
+/* main.css */
+@charset "UTF-8";
+
+#block, #target {
+	margin: 3px;
+	width: 80px;
+	height: 80px;
+	background: #0Eff;
+	border: 1px solid groove;
+}

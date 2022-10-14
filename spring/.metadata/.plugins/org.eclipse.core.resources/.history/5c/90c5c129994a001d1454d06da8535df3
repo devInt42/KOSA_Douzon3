@@ -1,0 +1,27 @@
+package ex04.di;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class MainEntry {
+	public static void main(String[] args) {
+
+		ApplicationContext ctx = new ClassPathXmlApplicationContext("ex04/di/playerCtx.xml");
+
+		PlayerImpl p = ctx.getBean("player", PlayerImpl.class);
+		String[] sportsName = {"축구", "농구", "컬링"};
+		Object[] className = {ctx.getBean("soccer"),ctx.getBean("basketball"), ctx.getBean("curling")};
+		
+		for(int i=0; i<sportsName.length; i++) {
+			System.out.println(sportsName[i]);
+			p = className[i];
+		}
+		/*
+		 * Curling c = ctx.getBean("curling", Curling.class); Soccer s =
+		 * ctx.getBean("soccer", Soccer.class); s.setPlayer(p); p.input(); p.info();
+		 * 
+		 * c.setPlayer(p); p.input(); p.info();
+		 */
+
+	}
+}

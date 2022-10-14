@@ -1,0 +1,21 @@
+package ex01.quiz;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class MainEntry {
+	public static void main(String[] args) {
+		ApplicationContext ctx = new ClassPathXmlApplicationContext("score.xml");
+		System.out.println("=========setter method==========");
+		ScoreViewImpl view = (ScoreViewImpl)ctx.getBean("view");
+		view.input();
+		view.print();
+		System.out.println("===========================");
+		ApplicationContext ctx = new ClassPathXmlApplicationContext("score.xml");
+
+		ScoreImpl view2 = (ex01.quiz.ScoreImpl) ctx.getBean("score");
+		view2.print();
+		
+	
+	}
+}

@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<title>ex07_class.html</title>
+
+<script type="text/javascript">
+	// object : {  }
+	
+	function makePerson(name, phone, addr) {
+		const person2 = {
+				name: name,
+				phone: phone,
+				addr: addr,
+				
+				infomation : function () {
+					let  list2 = ' ';
+					for(let key in this) {
+						if( key != 'infomation') {
+							list2 += key + " : " + this[key] + "\n"
+						} // end if
+					} // end for
+					alert(list2);
+				} // end function
+		};
+		return person2;
+	}  // end 
+	
+	let p = makePerson("kingsmile", "00000", "seoul");
+	let p2 = makePerson("jundu", "2222", "jeju");
+	p.infomation();
+	p2.infomation();
+	
+	let ps2 = [p, p2];
+	ps2.push(makePerson("aaaa",'9999','busan'));
+	
+	
+	
+	document.write("<p /><hr>")
+	const person = {
+			/* constructor()
+			{
+				
+			} */
+			name: "홍길동",
+			phone: "010-9872-0202",
+			addr: "서울 서대문구 연희동",
+			
+			info: function () {  // method
+				alert("name: " + this.name + "\n"
+					+ "phone: " + this.phone + "\n"
+					+ "addr : " + this.addr
+				);
+			
+			let list = ' ';
+			for(let key in this) {   // for in ,   forEach()
+				list += ( key + " : " + this[key] + "\n")
+			} // for end
+			
+			alert(list);
+			
+			} //  info function end
+	}
+	
+	// person.info();
+	person.name = '김연아';
+	console.log(person.name);
+	document.write(person.name);
+	document.write("<p /> <hr>");
+	console.log(Object.values(person));
+	document.write(Object.values(person));
+	
+	/* 
+	let  ps = new Person();
+	ps.name = 'kbs';
+	 */
+	document.write("<p /><hr>")
+	let  calculator ;  //  초기화 X  - undefined == false
+	// && 연산
+	calculator && document.writeln('calculator.plus(2,3) : ' + calculator.plus(2,3) );  
+	
+	calculator = {
+			plus : function (su1, su2) {
+				return su1 + su2;
+			}
+	}
+	// && 연산에서는 0, undefined, null, NaN, "" 이외의 값을 가지면   true 로 평가됨
+	calculator && document.writeln('calculator.plus(3,7) : ' + calculator.plus(3,7) );  
+	
+	// || 
+	calculator || document.writeln('calculator.plus(3,7) : ' + calculator.plus(3,7) );  
+
+
+</script>
+
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,160 @@
+@charset "UTF-8";
+
+body {
+	background-color: #f9f9f9;
+}
+
+.headline {
+	width: 100%;
+	height: 450px;
+	text-align: center;
+	border-bottom: 1px solid #D3D3D3;
+	background-color: #9E9E9E;
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	height: 450px;
+}
+
+#profile {
+	width: 300px;
+	height: 300px;
+	border-radius: 50%;
+	position: absolute;
+	left: 43%;
+	right: 50%;
+	border: 5px solid #fff;
+}
+
+.introduce {
+	height: 900px;
+}
+
+#name {
+	font-size: 50px;
+	align-items: center;
+	display: flex;
+	justify-content: center;
+}
+
+#nickname {
+	font-size: 30px;
+	color: gray;
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.content {
+	width: 100%;
+	height: 200px;
+}
+
+#text {
+	margin-left: 42%;
+	height: 50px;
+	font-size: 30px;
+	text-align: left;
+}
+
+#icon {
+	width: 30px;
+	height: 30px;
+}
+
+.education {
+	width: 100%;
+	float: left;
+}
+
+#title {
+	margin-left: 42%;
+	font-size: 30px;
+	vertical-align: middle;
+}
+
+.school {
+	width: 100%;
+	float: left;
+	text-align: center;
+}
+
+.schoolName {
+	width: 50%;
+	text-align: right;
+	float: left;
+	margin-left: -5%;
+}
+
+.major {
+	margin-left: 2%;
+	width: 30%;
+	float: left;
+	text-align: left;
+	width: 30%;
+}
+
+#sName {
+	font-size: 25px;
+}
+
+#mName {
+	font-size: 25px;
+}
+
+#btn {
+	margin-left: 42%;
+	width: 175px;
+	height: 45px;
+	border: 3px solid #D3D3D3;
+	background-color: #f9f9f9;
+	margin-top: 1%;
+}
+
+.contact {
+	width: 100%;
+	font-size: 30px;
+	float: left;
+	bottom: 6px;
+}
+
+#f1 {
+	width: 33%;
+	text-align: center;
+	float: left;
+}
+
+#f2 {
+	width: 34%;
+	float: left;
+	text-align: center;
+}
+
+#f3 {
+	width: 33%;
+	float: left;
+	text-align: center;
+}
+/*-------------------------------------------------ryuproject.html-----------------------  */
+.history {
+	width: 90%;
+	height: 1000px;
+	border: 1px solid #000;
+	margin-left: 5%;
+	margin-top: 2%;
+	float: left;
+}
+
+#proName {
+	width: 300px;
+	height: 500px;
+		float: left;
+	
+}
+
+#proStack {
+	width: 300px;
+	height: 500px;
+	text-align : center;	
+}

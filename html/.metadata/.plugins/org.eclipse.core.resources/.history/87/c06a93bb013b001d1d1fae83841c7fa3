@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ex01_jquery.html</title>
+<!-- <script type="text/javascript" src = "../js/jquery-3.6.1.min.js"></script>
+ -->
+<script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+</head>
+
+<body>
+	<header>
+		<h2>jQuery Sample</h2>
+	</header>
+
+	<input id="inputdemo" value="  ">
+	<input type="button" value="변환1">
+	<input type="button" value="변환2">
+
+	<div class="welcome"></div>
+	<div class="welcome"></div>
+	<hr>
+	<div id="demo">
+		<div class="inner">Create jQuery Test</div>
+	</div><hr>
+	<div id='name'>이부분에 클릭 이벤트가 발생하면 자신이름 출력하시오</div>
+
+	<script type="text/javascript">
+		// 		document.getElementsByTagName('h2')[0].style.color = 'red';
+		// 	$('h2').css({'color' : 'pink'})
+		//1. 체이닝 (chain) 방식
+		/* $('.welcome').html('hello world! DouZone th3!!!')
+		.css('background-color','orange')
+		//.on('click',function(){
+			.click(function(){
+			$(this).css('background-color','aqua')
+		});
+ 		 */
+ 		$('.welcome').html('hello world! DouZone th3!!!')
+		.css('background-color','orange')
+		.on('click', function (e){
+			console.log(e);
+			let clicked = e.target;
+			console.log(clicked);
+			$(this).css('background-color', 'red	')
+		});
+ 		 
+ 		$('#name')
+		.css('background-color','orange')
+		.on('click', function (e){
+			let clicked = e.target;
+			console.log(clicked);
+			$(this).css('background-color', 'red').html('류정수')
+		});
+ 		
+ </script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>ex03_animation.html</title>
+
+<style type="text/css">
+div {
+	margin: 3px;
+	width: 80px;
+	height: 80px;
+	background: #0f0;
+	border: 1px solid groove;
+}
+</style>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script defer type="text/javascript">
+   $(function() {
+	   
+	   $('input[type="button"]').on('click', function(e){
+		   let $target = $(e.target);
+		   switch($target.attr('id')){
+		   case 'fadeout' : $('#target').fadeOut('slow'); break;
+		   case 'fadein' : $('#target').fadeIn('slow'); break;
+		   case 'hide' : $('#target').hide(); break;
+		   case 'show' : $('#target').show(); break;
+		   case 'slidedown' : $('#target').hide().slideDown('slow'); break;
+		   case 'slideup' : $('#target').sldieUp('slow'); break;
+		   case 'mix' : $('#target').fadeOut('slow').fadeIn('slow').delay(1000).slideUp().slideDown('slow', function(){
+			   alert('마칩니다')
+		   }); 
+		   break;
+
+ 		   }
+	   })
+	   
+      $('#run').on('click', function() {
+         $('#target').animate({
+            width : "300px",
+            opacity : 0.4,
+            marginLeft : "50px",
+            fontSize : "30",
+            borderWidth:"10",
+            borderColor: "red",
+            transition: "border-width 0.6s swing"
+         }, 3000);
+         
+         $
+      });
+   });
+   
+   $(function(){
+	  $('#fadein').on('click', function(){
+		$('#target').fadeIn('fast');  
+	  });
+   });
+</script>
+
+</head>
+<body>
+
+
+	<button id="run">&raquo; Run</button>
+	<div id="block">DouZone 화이팅!!!</div>
+
+
+	<input type="button" id="fadeout" value="fade out" />
+	<input type="button" id="fadein" value="fadein" />
+	<input type="button" id="hide" value="hide" />
+	<input type="button" id="show" value="show" />
+	<input type="button" id="slidedown" value="slidedown" />
+	<input type="button" id="slideup" value="slideup" />
+	<input type="button" id="mix" value="mix" />
+
+	<div id="target">여기!!!!!</div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean class="ex04.di.IRecordImpl" id="record">
+		<!-- 생성자를 통해서 값(value) 주입 -->
+		<!-- <constructor-arg>
+			<value>100</value>
+		</constructor-arg>
+		<constructor-arg value="99" />
+		<constructor-arg value="88"></constructor-arg> -->
+		
+		<constructor-arg name = "eng"  value = "45"/>
+		<constructor-arg name = "kor"  value = "95"/>
+		<constructor-arg name = "com"  value = "77"/>
+		
+		
+	</bean>
+
+	<bean id="view" class="ex04.di.IRecordViewImpl">
+		<property name="record" ref="record" />
+	</bean>
+</beans>

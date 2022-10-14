@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<title>tag - form :  get/post</title>
+</head>
+<body>
+<h4>전송방식 : get / post</h4>
+
+	<!-- post  전송방식 : 글자수 제한 없음. 약한보안 적용 
+			http://localhost:8080/day36_html/jsp/result.jsp
+	-->
+	
+	<form action="../jsp/result.jsp"  method="post">
+		이름 : <input type="text" name="name" id="name" placeholder="이름 입력 요망"> <br>
+		비번 : <input type="password" name="pwd" id="pwd" 
+				placeholder="비번 넣으세요"  required> <br>
+		메일 : <input type="email" name="mail"  
+						placeholder="id@hostaddress.kr"
+						required="required"
+						> <br><br>
+				 &nbsp;&nbsp;&nbsp;<input type="submit"  value="전송"> 
+				 &nbsp;&nbsp; <input type="reset"  value="취소">
+		
+	</form>
+<hr>
+	<!-- get 방식 전송 : 글자수에 제한 있음(255자), 보안에 취약하다 
+		http://localhost:8080/day36_html/html/ex04_form.html?name=yuna&pwd=1004
+	-->
+
+	<form action="../jsp/result.jsp"  method="get">
+		이름 : <input type="text" name="name" id="name"> <br>
+		비번 : <input type="password" name="pwd" id="pwd"> <br><br>
+				 &nbsp;&nbsp;&nbsp;<input type="submit"  value="전송"> 
+				 &nbsp;&nbsp; <input type="reset"  value="취소">
+		
+	</form>
+</body>
+</html>

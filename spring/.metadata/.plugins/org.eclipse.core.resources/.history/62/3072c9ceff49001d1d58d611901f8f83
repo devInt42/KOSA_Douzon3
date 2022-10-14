@@ -1,0 +1,16 @@
+package ex02.quiz;
+
+public class PersonView implements IPersonView {
+	private String name, sex;
+	private int age;
+	
+	
+	
+	@Override
+	public void print() {
+		
+	}
+	
+	
+	
+}

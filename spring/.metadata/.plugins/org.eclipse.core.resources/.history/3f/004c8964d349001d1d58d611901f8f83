@@ -1,0 +1,18 @@
+package ex04.di;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class MainEntry {
+	public static void main(String[] args) {
+														// spring config file(.xml)
+		ApplicationContext context = new ClassPathXmlApplicationContext("ex04/di/appCtx.xml");
+		
+//		IRecordViewImpl view = (IRecordViewImpl)context.getBean("view");
+		IRecordViewImpl view = context.getBean("view", IRecordViewImpl.class);
+		
+
+		
+		
+	}
+}

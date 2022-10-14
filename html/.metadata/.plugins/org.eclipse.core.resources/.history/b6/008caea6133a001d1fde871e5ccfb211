@@ -1,0 +1,4 @@
+
+function hrefInsta() {
+	location.href = "https://www.instagram.com/integer_42/";
+}

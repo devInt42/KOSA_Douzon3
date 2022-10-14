@@ -1,0 +1,15 @@
+package ex02.quiz;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import ex01.quiz.ScoreViewImpl;
+
+public class MainEntry {
+	public static void main(String[] args) {
+		ApplicationContext ctx = new ClassPathXmlApplicationContext("person.xml");
+		ScoreViewImpl view = (ScoreViewImpl)ctx.getBean("view");
+
+
+	}
+}

@@ -1,0 +1,11 @@
+package ex03.nonDI;
+
+public class MainEntry {
+	public static void main(String[] args) {
+		
+		IRecord record = new IRecordImpl();
+		IRecordView view = new IRecordViewImpl() {
+			
+		}
+	}
+}

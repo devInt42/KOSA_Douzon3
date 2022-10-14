@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ex08_구조분해할당.html</title>
+<script type="text/javascript">
+	let fruits = ['사과','바나나'];
+
+	fruits.forEach(function (){
+		
+	})
+	
+</script>
+</head>
+<body>
+
+	<h2>구조 분해 할당</h2> <hr>
+	<input type ="text" required placeholder="힌트">
+	<input type = "submit" value="전송">
+	
+</body>
+</html>

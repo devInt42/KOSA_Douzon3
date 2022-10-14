@@ -1,0 +1,33 @@
+package ex01.quiz;
+
+import java.util.Scanner;
+
+public class ScoreViewImpl implements IScoreView {
+	private ScoreImpl score;
+	
+	// setter∑Œ ¡÷¿‘
+	
+	public void setScore(ScoreImpl score) {//DI¿˚øÎ
+		this.score = score;
+	}
+	
+	@Override
+	public void input() {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("¿Ã∏ß : ");		score.setName(sc.next());
+		System.out.print("¿Ωæ« : ");		score.setMusic(sc.nextInt());
+		System.out.print("πÃº˙ : ");		score.setArt(sc.nextInt());
+		System.out.print("√º¿∞ : ");		score.setPe(sc.nextInt());
+		setTot();
+	}
+
+	@Override
+	public void print() {
+		
+		System.out.println("¿Ã∏ß : " + score.getName());
+		System.out.println("√—¡° :" + score.getTot());
+		System.out.println("∆Ú±’ :" + score.getAvg());
+
+	}
+
+}

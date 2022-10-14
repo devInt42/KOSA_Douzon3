@@ -1,0 +1,24 @@
+package ex01.quiz;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class MainEntry {
+	public static void main(String[] args) {
+		
+		ApplicationContext ctx = new ClassPathXmlApplicationContext("grade.xml");
+		GradeImpl gr = (ex01.quiz.GradeImpl) ctx.getBean("grade");
+		gr.total();
+		gr.avg();
+		gr.display();
+		
+		System.out.println("========입력값 받기===========");
+
+		GradeImpl gr2 = new GradeImpl();
+		gr2.Input();
+		gr2.total();
+		gr2.avg();
+		gr2.display();
+	
+	}
+}

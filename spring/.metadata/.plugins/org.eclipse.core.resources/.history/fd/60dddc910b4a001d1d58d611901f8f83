@@ -1,0 +1,10 @@
+package ex03.quiz;
+
+public class FootballViewImpl implements IPlayer {
+
+	@Override
+	public void print() {
+
+	}
+
+}

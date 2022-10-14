@@ -1,0 +1,9 @@
+package ex01.quiz;
+
+public class MainEntry {
+	public static void main(String[] args) {
+		GradeImpl gr = new GradeImpl();
+		gr.total();
+		gr.avg();
+	}
+}

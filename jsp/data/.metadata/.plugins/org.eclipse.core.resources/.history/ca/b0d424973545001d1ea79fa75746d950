@@ -1,0 +1,5 @@
+ackage edu.kosa.board.action;
+
+public class DeleteProAction {
+
+}

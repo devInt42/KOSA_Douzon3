@@ -1,0 +1,43 @@
+/**
+ * 
+ */
+const person ={
+	firstName : 'Jungsoo',
+	lastName : 'Ryu',
+	getFullName : function(){
+		return `${this.firstName} ${this.lastName}`
+	}
+	
+}
+
+console.log(person.getFullName)
+console.log(person.firstName)
+
+const amy = {
+	firstName : 'Amy',
+	lastName : 'Clarke',
+	getFullName : function(){
+		return `${this.firstName} ${this.lastName}`
+	}
+}
+
+console.log(amy)
+
+const neo = {
+	firstName : 'Neo',
+	lastName : 'Clarke',
+	getFullName : function(){
+		return `${this.firstName} ${this.lastName}`
+	}
+}
+
+console.log(neo)
+console.log(neo.getFullName)
+
+function user(first, last){
+	this.firstName = first
+	this.lastName = last
+}
+
+const person = new user('Happy','Kang')
+console.log(ps)

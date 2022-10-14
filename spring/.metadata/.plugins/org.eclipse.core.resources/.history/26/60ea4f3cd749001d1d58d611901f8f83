@@ -1,0 +1,11 @@
+package ex01.di;
+
+import java.applet.AppletContext;
+
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class MainEntry {
+	public static void main(String[] args) {
+		AppletContext ctx = new ClassPathXmlApplicationContext("applicationContext")
+	}
+}

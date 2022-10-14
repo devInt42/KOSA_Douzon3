@@ -1,0 +1,52 @@
+$(function(){
+		   $('#demo .inner').click(function(){
+	   
+	   $(this).animate({opacity : 0, fontSize:'0px'}, 1500, 'linear');
+	   //이징 : linear, swing
+	   
+	   
+	   });
+}) ;
+
+ $(function() {
+
+	   
+	   
+	   
+	   $('input[type="button"]').on('click', function(e){
+		   let $target = $(e.target);
+		   switch($target.attr('id')){
+		   case 'fadeout' : $('#target').fadeOut('slow'); break;
+		   case 'fadein' : $('#target').fadeIn('slow'); break;
+		   case 'hide' : $('#target').hide(); break;
+		   case 'show' : $('#target').show(); break;
+		   case 'slidedown' : $('#target').hide().slideDown('slow'); break;
+		   case 'slideup' : $('#target').slideUp('slow'); break;
+		   case 'mix' : $('#target').fadeOut('slow').fadeIn('slow').delay(1000).slideUp().slideDown('slow', function(){
+			   alert('마칩니다')
+		   }); 
+		   break;
+
+ 		   }
+	   })
+	   
+      $('#run').on('click', function() {
+         $('#target').animate({
+            width : "300px",
+            opacity : 0.4,
+            marginLeft : "50px",
+            fontSize : "30",
+            borderWidth:"10",
+            borderColor: "red",
+            transition: "border-width 0.6s swing"
+         }, 3000);
+         
+         $
+      });
+   });
+   
+   $(function(){
+	  $('#fadein').on('click', function(){
+		$('#target').fadeIn('fast');  
+	  });
+   });

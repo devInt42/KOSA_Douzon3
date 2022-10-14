@@ -1,0 +1,46 @@
+package ex02.quiz;
+
+public class PersonImpl implements IPersonView {
+	private String name, age, sex;
+	
+	public PersonImpl(){}
+	
+	// 1. constructor <---- DI
+	public PersonImpl(String name, String age, String sex) {
+		super();
+		this.name = name;
+		this.age = age;
+		this.sex = sex;
+	}
+	
+	@Override
+	public void print() {
+		System.out.println("ÀÌ¸§ : " + 	name);
+	}
+	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getSex() {
+		return sex;
+	}
+
+	public void setSex(String sex) {
+		this.sex = sex;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+
+}

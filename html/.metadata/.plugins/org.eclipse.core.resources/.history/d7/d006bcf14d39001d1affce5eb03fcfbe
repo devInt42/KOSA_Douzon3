@@ -1,0 +1,10 @@
+/**
+ * 
+ */
+
+const doyeon = {
+	name : 'Jungsoo',
+	normal : function(){
+		console.log(this.name)
+	}
+}

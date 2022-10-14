@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>류정수 프로젝트</title>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+<link href="../css/ryuint.css" rel="stylesheet">
+<script src="../js/ryuint.js" type="text/javascript"></script>
+</head>
+<body>
+	<div class="headline">
+		<img alt="" src="../images/profile.jpg" id="profile"><br>
+	</div>
+
+	<div class="history">
+		<div id="proName">
+			<div id="protitle">프로젝트명</div>
+			<div id="realtitle">상하의 트위스트</div>
+			<br>
+			<div id>
+				<img alt="" src="../images/Twist.png" id="s2">
+			</div>
+		</div>
+		<div id="proText">
+			<div id="protitle">프로젝트 설명</div>
+			<br>
+			<div>
+				내가 소지하고 있는 옷, 혹은 사고 싶어 하는 옷을 캡처 후 의상조합 기능을 통해<br> 그날의 코디, 사고 싶어
+				하는 옷이 내가 소지한 옷과 어울리는지 비교할 수 있는<br> 웹 애플리케이션 <span
+					style="font-weight: bold;">‘상하의 트위스트’</span> 제작<br>
+				<br> <span style="font-size: 20px; font-weight: bold;">1.
+					기간 및 역할<br>
+				<br>
+				</span> 2021.03 ~ 2021.06 프로젝트 리더 <br>
+				<br> <span style="font-size: 20px; font-weight: bold;">2.
+					주요 업무<br>
+				<br>
+				</span>
+				<ul>
+					<li>- 프로젝트 아이디어 기획</li>
+					<br>
+					<li>- S/W 구성도, 시스템 흐름도 설계, 기능 정의</li>
+					<br>
+					<li>- HTML5, JS, CSS를 활용한 프론트 엔드 개발</li>
+					<br>
+					<li>- JAVA, My SQL, JSP를 활용한 백엔드 개발</li>
+					<br>
+					<li>- 프로젝트 발표</li>
+					<br>
+					<br>
+				</ul>
+				<span style="font-size: 20px; font-weight: bold;">3. 프로젝트 내용
+					<br>
+				<br>
+				</span>
+				<ul>
+					<li>- JSP로 구현한 DB 접속 및 수정 코드를 Java를 활용해 DAO 클래스 생성 후 DAO로 이관,
+						테이블 당 하나의 DAO 클래스 구성</li>
+					<br>
+					<li>- JSP를 통해 HTTP 요청과 응답 관련 처리 구현</li>
+					<br>
+					<li>- JDBC를 활용해 DB 접근</li>
+					<br>
+					<li>- Html2Canvas를 통해 이미지 캡처 기능 구현</li>
+					<br>
+					<li>- 나만의 옷장, 커뮤니티, 설정 기능을 HTML5, CSS를 통해 설계</li>
+					<br>
+				</ul>
+				<br>
+				<br> <span style="font-size: 20px; font-weight: bold;">4.
+					주요기능<br>
+				<br>
+				</span>
+				<ul>
+					<li>- 나만의 옷장 : 옷 이미지를 상의, 하의로 구분해 옷장에 저장하여 한눈에 소지한 옷을 알 수 있다.</li>
+					<br>
+					<li>- 의상 조합 : 옷장에 저장된 상의, 하의를 불러와 비교하며 그날의 코디, 내가 살 옷이 현재 보유한
+						옷과 어울리는지 비교 가능</li>
+					<br>
+					<li>- 커뮤니티 : 회원간 의상 관련 조언, 혹은 추천을 할 수 있는 커뮤니티 게시판</li>
+					<br>
+					<li>- 설정: 회원 관리, 커뮤니티 공지 및 게시글 관리</li>
+					<br>
+			</div>
+		</div>
+
+		<div id="proStack">
+			<div id="protitle">프로젝트 스택</div>
+			<div id="realtitle">HTML5 JAVA CSS3 JS</div>
+			<div id="propic">
+				<img alt="" src="../images/st1.png" id="s1">
+			</div>
+			<div id="propic">
+				<img alt="" src="../images/st2.png" id="s1">
+			</div>
+		</div>
+	</div>
+	<div class="history">
+		<div id="proName">
+			<div id="protitle">프로젝트명</div>
+			<div id="realtitle">우리개는 안물어요</div>
+			<br>
+			<div id>
+				<img alt="" src="../images/title.png" id="s3">
+			</div>
+		</div>
+		<div id="proText">
+			<div id="protitle">프로젝트 설명</div>
+			<br>
+			<div>
+				매년 증가하는 개물림 사고를 방지해주는 <span style="font-weight: bold;">스마트 목줄</span>과<br>
+				이를 연동시켜 반려견의 현재 흥분 상태 측정, 현재 위치, 반려견 행동제어를 위한 <span
+					style="font-weight: bold;">애플리케이션 ‘아물다’</span>(아무도 물지 않는다.) <br>
+				<br> <span style="font-size: 20px; font-weight: bold;">
+				1.기간 및 역할<br>
+				<br>
+				</span> 2021.04 ~ 2021.11 / 한이음 ICT 프로젝트 기획, 자료 수집, S/W 개발 <br>
+				<br> <span style="font-size: 20px; font-weight: bold;">
+				2.주요 업무<br>
+				<br>
+				</span>
+				<ul>
+					<li>- 프로젝트 아이디어 기획</li>
+					<br>
+					<li>- 127마리 반려견의 심박수, 체온, 호흡수를 직접 측정 및 수집 후 가공</li>
+					<br>
+					<li>- Android Studio, Adobe Photoshop 활용을 통한 XML파일 제작</li>
+					<br>
+					<li>- 시스템 흐름도 제작</li>
+					<br>
+					<li>- JAVA를 활용한 GUI 이벤트처리</li>
+					<br>
+					<li>-  UX/UI, 디자인, Premiere Pro 활용 동영상 편집, 제작	</li>
+					<br>
+					<br>
+				</ul>
+				<span style="font-size: 20px; font-weight: bold;">
+				3. 프로젝트 내용
+				<br>
+				<br>
+				</span>
+				<ul>
+					<li>- 아두이노와 라즈베리 파이를 기반으로한 스마트 목줄 개발</li>
+					<br>
+					<li>- 심박수, 체온, 가속도 센서를 통해 수집된 정보를 수식에 대입해 흥분도 수치화</li>
+					<br>
+					<li>- 수치화한 흥분도를 4단계로 분류한 후 애플리케이션을 통해 단계별 반려견의 행동 제어</li>
+					<br>
+					<li>- GPS를 통해 반려견의 현재 위치 파악 가능</li>
+					<br>
+					<li>- 나만의 옷장, 커뮤니티, 설정 기능을 HTML5, CSS를 통해 설계</li>
+					<br>
+				</ul>
+				<br>
+				<br> <span style="font-size: 20px; font-weight: bold;">4.
+					주요기능<br>
+				<br>
+				</span>
+				<ul>
+					<li>- 나만의 옷장 : 옷 이미지를 상의, 하의로 구분해 옷장에 저장하여 한눈에 소지한 옷을 알 수 있다.</li>
+					<br>
+					<li>- 의상 조합 : 옷장에 저장된 상의, 하의를 불러와 비교하며 그날의 코디, 내가 살 옷이 현재 보유한
+						옷과 어울리는지 비교 가능</li>
+					<br>
+					<li>- 커뮤니티 : 회원간 의상 관련 조언, 혹은 추천을 할 수 있는 커뮤니티 게시판</li>
+					<br>
+					<li>- 설정: 회원 관리, 커뮤니티 공지 및 게시글 관리</li>
+					<br>
+			</div>
+		</div>
+
+		<div id="proStack">
+			<div id="protitle">프로젝트 스택</div>
+			<div id="realtitle">HTML5 JAVA CSS3 JS</div>
+			<div id="propic">
+				<img alt="" src="../images/st1.png" id="s1">
+			</div>
+			<div id="propic">
+				<img alt="" src="../images/st2.png" id="s1">
+			</div>
+		</div>
+	</div>
+
+	<input type="button" id="btn" value="자세히" onclick="hrefRyuint()" />
+</body>
+</html>

@@ -1,0 +1,27 @@
+package ex03.nonDI;
+
+import java.util.Scanner;
+
+public class IRecordViewImpl implements IRecordView {
+
+	private IRecordImpl record;
+	
+	@Override
+	public void input() {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("kor : ");
+		record.setKor(sc.nextInt());
+	}
+
+	@Override
+	public void print() {
+		// TODO Auto-generated method stub
+
+	}
+
+	//setter∑Œ ¡÷¿‘
+	public void setRecord(IRecordImpl record) {
+		this.record = record;
+	}
+
+}

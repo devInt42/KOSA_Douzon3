@@ -1,0 +1,51 @@
+/** main3.js */
+// 제어문 - if , for, while,.....
+
+const ulEl = document.querySelector('ul')
+console.log( ulEl )
+
+for(let i = 0; i < 3; i += 1) {
+	const li = document.createElement('li')
+	li.textContent  = 'list-' + (i+1)
+	ulEl.appendChild(li)
+}
+
+//3. for
+for(let i = 0; i < 3; i += 1) {
+	console.log(i)
+}
+
+
+console.log('=================')
+
+const x = Math.floor(Math.random() * 10)   // 난수 
+
+console.log(x)
+
+//2. switch ~ case 
+switch (x) {
+	case 0:
+		console.log('x is 0')
+		break;
+	case 2:
+		console.log('x is 2')
+		break;
+	case 5:
+		console.log('x is 5')
+		break;
+	default:
+		console.log('reset......', x)
+}
+
+
+console.log('=================')
+
+//1. if~ else
+
+if (x === 0) {
+	console.log('x is 0')
+} else if (x === 2) {
+	console.log('x is 2')
+} else {
+	console.log('reset......', x)
+}

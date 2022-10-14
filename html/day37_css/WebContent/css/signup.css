@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+div{
+	margin: 0 auto;
+	font-size: 50px;
+	text-align: center;
+	font-family: 명조고딕;
+}
+table{
+	margin : 0 auto;
+	border : 2px solid;
+	background-color: #cfe0ff; 
+}
+
+td{
+	border : 1px solid;
+}
+
+#category{
+	text-align: center;
+	border : 1px solid;
+}
+
+#phone{
+	width : 50px;
+}
+span{
+	color : orange;
+}

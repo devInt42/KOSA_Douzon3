@@ -1,0 +1,11 @@
+package com.edu;
+
+import org.slf4j.LoggerFactory;
+
+public class InformationController {
+	private static final Logger logger = LoggerFactory.getLogger(InformationController.class);
+	
+	public String info(Moderl m) {
+		return null;
+	}
+}

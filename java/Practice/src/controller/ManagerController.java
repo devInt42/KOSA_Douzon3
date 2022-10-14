@@ -1,0 +1,239 @@
+package controller;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Scanner;
+import java.util.regex.Pattern;
+
+import dbConn.util.CloseHelper;
+import dbConn.util.ConnectionHelper;
+
+public class ManagerController extends ParentsController {
+	static Scanner sc = new Scanner(System.in);
+	static Statement stmt = null;
+	static ResultSet rs = null;
+	static Connection conn = null;
+	static PreparedStatement pstmt = null;
+	static String CNO = null;
+	static int CMANAGER;
+
+	public static void menuList() {
+		System.out.println("\n======= 관리자 페이지=======\n");
+		System.out.println("\t 1. 회원정보 ");
+		System.out.println("\t 2. 회원관리");
+		System.out.println("\t 3. 거래목록 ");
+		System.out.println("\t 4. 물품현황 및 관리 ");
+		System.out.println("\t 5. 이전 메뉴로 돌아가기 ");
+		System.out.println("\n=======================\n");
+		System.out.print(">> 원하는 메뉴 선택하세요  : ");
+
+	}
+
+	public static void menu(String cNO, int cMANAGER) throws SQLException {	
+		connect();
+		while (true) {
+			System.out.println();
+			menuList();
+			switch (sc.nextInt()) {
+			case 0:
+				System.out.println("Commit 하시겠습니까?(Y/N) ");
+				System.out.println("안하시려면 Rollback 됩니다. ");
+				if (sc.next().equalsIgnoreCase("Y")) {
+					commit(); // 예외발생
+				} else {
+					rollback();
+				}
+				break;
+
+			case 1:
+				viewCustomer();
+				break;
+			case 2:
+				updateCustomerInfo();
+				break;
+			case 3:
+				viewTrade();
+				break;
+			case 4:
+				updateItem();
+				break;
+			case 5:
+				MarketController.menu();
+				break;
+			default:
+				System.out.println("1~5번을 입력하세요.");
+				break;
+			}
+
+		}
+	}
+	
+	public static void viewCustomer() throws SQLException { // 1. 회원정보
+		connect();
+		rs = stmt.executeQuery("SELECT * FROM CUSTOMER ORDER BY CNO"); // 반환값 있는 경우
+		System.out.println("회원번호\t아이디\t\t회원이름\t비밀번호\t전화번호\t\t\t집주소");
+		while (rs.next()) {
+			int cno = rs.getInt(1);
+			String cid = rs.getString(2);
+			String cname = rs.getString(3);
+			String pwd = rs.getString(4);
+			String addr = rs.getString(5);
+			String tel = rs.getString(6);
+			System.out.println(cno + "\t\t" + cid + "\t" + cname + "\t\t" + pwd + "\t\t" + tel + "\t" + addr);
+		} // end while
+	}
+	private static void viewTrade() throws SQLException { //3. 거래목록 
+		connect();
+		rs = stmt.executeQuery("SELECT*FROM V_TRADE"); // 반환값 있는 경우
+		System.out.println("상품번호\t상품명 \t상품가격\t판매자회원번호\t판매자 \t구매자회원번호\t구매자");
+		while (rs.next()) {
+			int ino = rs.getInt(1);
+			String iname = rs.getString(2);
+			String iprice = rs.getString(3);
+			int scno = rs.getInt(4);
+			String scname = rs.getString(5);
+			int bcno = rs.getInt(6);
+			String bcname = rs.getString(7);
+			System.out.println(ino + "\t\t" + iname + "\t\t" + iprice + "원\t \t" + scno + "\t\t" + scname + "\t\t"+bcno+"\t\t"+bcname);
+		} // end while
+	}
+	
+
+	public static void updateItem() throws SQLException { // 4. 물품현황 및 관리
+		connect();
+		rs = stmt.executeQuery("SELECT*FROM V_MANAGE_ITEMLIST ORDER BY INO"); // 반환값 있는 경우
+		System.out.println("상품번호\t회원번호\t판매자명\t상품명 \t판매가격");
+		while (rs.next()) {
+			int ino = rs.getInt(1);
+			String iname = rs.getString(2);
+			String iprice = rs.getString(3);
+			int cno = rs.getInt(4);
+			String cname = rs.getString(5);
+			System.out.println(ino + "\t\t" + cno + " \t\t" + cname + "\t \t" + iname + "\t\t" + iprice + "원");
+		} // end while
+	}
+
+
+
+	public static void updateCustomerInfo() throws SQLException { // 2. 회원관리 
+		a: while (true) {
+			String modify = null;
+			commit();
+			System.out.println("0 선택 ==> update 탈출합니다.");
+
+			b: while (true) {
+				viewCustomer();
+				System.out.println("\n수정할 회원의 회원번호를 입력하세요	없을경우 0	");
+				int cno = sc.nextInt();
+				System.out.println("\n\n1.이름 \t 2.아이디\t3.비밀번호\t4.주소 \t 5.전화번호\t 6.회원삭제\t0.exit\n");
+				System.out.print("수정할 필드 : ");
+				int choice = sc.nextInt();
+				switch (choice) {
+
+				case 1:
+					System.out.print("바뀔 이름 : ");
+
+					Object sql = stmt
+							.execute("UPDATE CUSTOMER SET CNAME = '" + sc.next() + "' WHERE CNO = '" + cno + "'");
+					System.out.println(sql);
+					break b;
+				case 2:
+
+					c: while (true) {
+						System.out.println("바뀔 아이디를 입력하시오. 영문자, 숫자가 각 1개 이상 포함된 8~16자리");
+						String CID = sc.next();
+
+						String pattern = "^(?=.*[a-zA-z])(?=.*[0-9]).{8,16}$";
+						boolean regex = Pattern.matches(pattern, CID);
+						if (!regex) {
+							System.out.println("아이디가 조건에 맞지 않습니다. 다시입력하시겠습니까?(Y/N)");
+							String ans = sc.next();
+							if (!ans.equalsIgnoreCase("Y")) {
+								rollback();
+								System.out.println("취소(롤백)했습니다");
+								break b;
+							} else {
+								continue;
+							}
+						}
+
+						else {
+							stmt.execute("UPDATE CUSTOMER SET CID = '" + CID + "' WHERE CNO = '" + cno + "'");
+							System.out.println("변경성공");
+
+							break b;
+						}
+					}
+
+				case 3:
+					c: while (true) {
+						System.out.println("비밀번호 입력.영문자, 숫자,특수문자가 각 1개 이상 포함된 8~16자리");
+						String PWD = sc.next();
+						String pattern2 = "^(?=.*[a-zA-z])(?=.*[0-9])(?=.*[$`~!@$!%*#^?&\\\\(\\\\)\\-_=+]).{8,16}$";
+						boolean regex2 = Pattern.matches(pattern2, PWD);
+						if (!regex2) {
+							System.out.println("비밀번호가 조건에 맞지 않습니다. 다시입력하시겠습니까?(Y/N)");
+							String ans = sc.next();
+							if (!ans.equalsIgnoreCase("Y")) {
+
+								rollback();
+								System.out.println("취소(롤백)했습니다");
+								break b;
+							} else {
+								continue;
+							}
+						} else {
+							stmt.execute("UPDATE CUSTOMER SET PWD = '" + PWD + "' WHERE CNO = '" + cno + "'");
+							System.out.println("변경성공");
+							break b;
+
+						}
+					}
+
+				case 4:
+					System.out.print("바뀔 주소 : ");
+					stmt.execute("UPDATE CUSTOMER SET ADDR = '" + sc.next() + "' WHERE CNO = '" + cno + "'");
+					break b;
+				case 5:
+					System.out.print("바뀔 전화번호 : ");
+					stmt.execute("UPDATE CUSTOMER SET TEL = '" + sc.next() + "' WHERE CNO = '" + cno + "'");
+					break b;
+				case 6:
+					System.out.print("회원 기록을 삭제시켰습니다.");
+
+					stmt.execute("DELETE FROM CUSTOMER WHERE CNO = '" + cno + "'");
+					stmt.execute("DELETE FROM ITEM WHERE SELLER_CNO = '" + cno + "'");
+
+					break b;
+				case 0:
+					break a;
+				default:
+					System.out.println("잘못된 번호");
+					break;
+				}
+
+				switch (choice) {
+				case 1:
+					modify = "이름";
+				case 2:
+					modify = "아이디";
+				case 3:
+					modify = "비밀번호";
+				case 4:
+					modify = "주소";
+				case 5:
+					modify = "전화번호";
+
+				}
+
+				System.out.println(modify + "수정이 완료됨");
+			}
+
+		}
+	}
+}
+
+

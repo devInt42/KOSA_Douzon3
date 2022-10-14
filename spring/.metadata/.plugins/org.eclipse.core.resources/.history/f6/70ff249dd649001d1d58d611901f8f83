@@ -1,0 +1,16 @@
+package ex01.di;
+
+public class MessageImpl implements IMessage {
+	
+	private String name, greeting;
+	
+	//1. constructor(생성자)이용 <---------- DI
+	public MessageImpl() { }
+	
+	@Override
+	public void sayHello() {
+	
+		
+	}
+
+}

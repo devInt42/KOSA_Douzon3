@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<title>ex06_class.html</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+<link href="../css/main.css" rel="stylesheet" >
+<!-- <script defer src="../js/main6.js" type="text/javascript"></script> -->
+<script defer src="../js/main7.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+	//배열처리 []
+	let arr2 = ['김연아', '이순신', '세종대왕'];
+	document.writeln('arr2[0] : ' + arr2[0] + '<br />');
+	document.writeln('arr2[1] : ' + arr2[1] + '<br />');
+	document.writeln('arr2[2] : ' + arr2[2] + '<br />');
+	document.writeln('arr2[3] : ' + arr2[3] + '<br />');
+	document.writeln('arr2.length : ' + arr2.length + '<br />');
+	document.writeln('<br />'); 
+	
+	let arr1 =[];
+	arr1[0] = 90;
+	arr1[2] = 100;
+	document.writeln('arr1[0] : ' + arr1[0] + '<br />');
+	document.writeln('arr1[1] : ' + arr1[1] + '<br />');
+	document.writeln('arr1[2] : ' + arr1[2] + '<br />');
+	document.writeln('arr1[3] : ' + arr1[3] + '<br />');
+	document.writeln('arr1.length : ' + arr1.length + '<br />');
+	document.writeln('<br />'); 
+	
+	
+	//배열을 원소로 하는 배열(2차원 배열) -3행 2열
+	let arr3 =[
+		['김연아','이순신'],
+		['광개토대왕','세종대왕'],
+		['박태환','강감찬']
+	];
+	
+	document.writeln('arr3[0] : ' + arr3[0] + '<br />');
+	document.writeln('arr3[1] : ' + arr3[1] + '<br />');
+	document.writeln('arr3[2] : ' + arr3[2] + '<br />');
+	document.writeln('arr3[3] : ' + arr1[3] + '<br />');
+	document.writeln('arr3.length : ' + arr3.length + '<br />');
+	
+	document.writeln('arr3[1][1] : ' + arr3[1] + '<br />');
+
+	
+	document.writeln('<br />'); 
+	
+	
+	
+	const num = 10;  // number
+	const str = 'javascript';  // string
+	document.writeln('num :'+num +'<br />');
+	const point = { x: 100,  y: 500 };  // object
+	const arr = [1, 2, 3, 4, 5];   // array
+	// function
+	const plus = function(su1, su2) { 
+		return su1 + su2;
+	}
+	function sum(x, y) {
+		document.write(x + y)
+	}
+	const add = (su1, su2 ) => su1 + su2;  
+
+	document.writeln('num : ' +num+'<br />');
+	document.writeln('str : ' +str+'<br />');
+	document.writeln('point.x : ' +point.x+'<br />');
+	document.writeln('point["y"] : ' +point["y"]+'<br />');
+	
+	document.writeln('arr[0] : ' +arr[0]+'<br />');  // 1
+	document.writeln('arr[3] : ' +arr[3]+'<br />');  // 4
+	
+	document.writeln('plus : ' +plus+'<br />');   // 함수 원형이 텍스트로 출력됨
+	document.writeln('plus : ' +plus()+'<br />');  // NaN
+	document.writeln('plus(3, 5) : ' +plus(3, 5)+'<br />');   // 함수호출
+
+	
+</script>
+</head>
+<body>
+	<h2 onclick="fn()">Class </h2>
+	<ul></ul>
+</body>
+</html>

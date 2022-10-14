@@ -1,0 +1,13 @@
+
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<title>ajax.html</title>
+<script src = "http://code.jquery.com/jquery-latest.js"></script>
+<script src = "http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+</head>
+<body>
+	<p>버튼 클릭시 이곳에 jquery ajax 실행됩니다.</p>
+	<div id = "stage style = "backgournd-color : #cc0"></div>
+	
+</body>
+</html>

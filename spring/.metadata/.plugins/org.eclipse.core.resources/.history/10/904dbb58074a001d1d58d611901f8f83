@@ -1,0 +1,23 @@
+package ex02.quiz;
+
+import java.util.Scanner;
+
+public class StudentViewImpl extends PersonImpl{
+	private PersonImpl person;
+	
+	//setter로 주입
+	public void setPerson(PersonImpl person) {
+		this.person = person;
+	}
+	
+	public void Input() {
+		Scanner sc = new Scanner(System.in);
+	}
+	
+	@Override
+	public void print() {
+		System.out.println("직업 : " + 	person.getJob());
+		super.print();
+	}
+
+}

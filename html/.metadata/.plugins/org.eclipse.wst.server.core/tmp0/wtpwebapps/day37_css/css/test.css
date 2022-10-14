@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+img {
+	border-color: lime;
+	border: 15px dotted;
+}
+span.accent {
+	font-size: 20px;
+	color: red;
+	font-weight: bold;
+}
+
+p em {
+	color: yellow;
+	background-color: purple;
+}
+
+body, div {
+	background-color: aqua;
+	text-align: center;
+}
+
+#multi {
+	color: orange;
+	font-size: 15px;
+}

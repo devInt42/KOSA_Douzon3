@@ -1,0 +1,23 @@
+package com.edu;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+
+
+@Controller
+public class InformationController {   // annotation controller 
+	
+	private static final Logger log = LoggerFactory.getLogger(InformationController.class);
+	
+	public String info(Model  m) {
+		
+		log.info("InformationController 컨트롤러에서 실행 된 내용입니다.");
+		
+		
+		
+		
+		return "info";    //    /WEB-INF/views/info.jsp 
+	}
+}

@@ -1,0 +1,6 @@
+package ex01.quiz;
+
+public class IScoreView {
+	void input();
+	void print();
+}

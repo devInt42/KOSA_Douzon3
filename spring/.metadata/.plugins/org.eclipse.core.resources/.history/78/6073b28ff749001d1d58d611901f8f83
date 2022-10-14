@@ -1,0 +1,109 @@
+package ex01.quiz;
+
+import java.util.Scanner;
+
+public class ScoreImpl implements IScore {
+	private String name;
+	private int music, art, pe, tot;
+	private double avg;
+
+	// 1. constructor(»ý¼ºÀÚ ÀÌ¿ë)
+	public ScoreImpl() {
+		this("",0,0,0);
+	}
+
+	public ScoreImpl(String name, int music, int art, int pe) {
+		super();
+		this.name = name;
+		this.music = music;
+		this.art = art;
+		this.pe = pe;
+	}
+
+	// 2.setter method
+
+
+	// ¼ºÀûÃ³¸® ÀÌ¸§, À½¾Ç, ¹Ì¼ú, Ã¼À° , ÃÑÁ¡, Æò±Õ
+	public void Input() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("ÀÌ¸§ : ");
+		setName(sc.next());
+		System.out.println("À½¾Ç : ");
+		setMusic(sc.nextInt());
+		System.out.println("¹Ì¼ú : ");
+		setArt(sc.nextInt());
+		System.out.println("Ã¼À° : ");
+		setPe(sc.nextInt());
+	}
+
+
+	@Override
+	public int total() {
+		int tot = this.art + this.music + this.pe;
+		setTot(tot);
+		return tot;
+	}
+
+	@Override
+	public double avg() {
+		double avg = tot / 3;
+		setAvg(avg);
+		return avg;
+	}
+
+	public void display() {
+		System.out.println("ÀÌ¸§ : " + name);
+		System.out.println("ÃÑÁ¡ : " + tot);
+		System.out.println("Æò±Õ : " + avg);
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getMusic() {
+		return music;
+	}
+
+	public void setMusic(int music) {
+		this.music = music;
+	}
+
+	public int getArt() {
+		return art;
+	}
+
+	public void setArt(int art) {
+		this.art = art;
+	}
+
+	public int getPe() {
+		return pe;
+	}
+
+	public void setPe(int pe) {
+		this.pe = pe;
+	}
+
+	public int getTot() {
+		return tot;
+	}
+
+	public void setTot(int tot) {
+		this.tot = tot;
+	}
+
+	public double getAvg() {
+		return avg;
+	}
+
+	public void setAvg(double avg) {
+		this.avg = avg;
+	}
+
+
+}

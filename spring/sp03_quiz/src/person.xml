@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="student" name="student" class="ex02.quiz.StudentViewImpl">
+		<property name="name" value="류학생" />
+		<property name="age" value="27" />
+		<property name="sex" value="남" />
+		<property name="school" value="KOSA대학교" />
+	</bean>
+	
+		<bean id="employee" name="employee" class="ex02.quiz.EmployeeViewImpl">
+		<property name="name" value="류학생" />
+		<property name="age" value="27" />
+		<property name="sex" value="남" />
+		<property name="company" value="더존비즈온" />
+	</bean>
+	
+</beans>

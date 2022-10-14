@@ -1,0 +1,16 @@
+
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<title>ex06_class.html</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+<link href="../css/main.css" rel="stylesheet" >
+<!-- <script defer src="../js/main6.js" type="text/javascript"></script>
+ -->
+ <script defer src="../js/main7.js" type="text/javascript"></script>
+
+</head>
+<body>
+	<h2>Class </h2>
+</body>
+</html>

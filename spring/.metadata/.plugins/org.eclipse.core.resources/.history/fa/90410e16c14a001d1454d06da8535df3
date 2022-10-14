@@ -1,0 +1,19 @@
+package ex01.di.annot;
+
+import java.util.ArrayList;
+
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class JavaConfig {
+
+	public MyCats cat1() {
+		ArrayList<String> hobbys = new ArrayList();
+		hobbys.add("æ’πﬂµÈ±‚");
+		hobbys.add("µﬂ±º±‚");
+		
+		MyCats myCats = new MyCats("≥…¿Ã", 12, "");
+		
+		return myCats;
+	}
+}

@@ -1,0 +1,33 @@
+package edu.kosa.board.controller;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.sql.DataSource;
+
+import edu.kosa.board.model.GiftVO;
+
+public class GiftDAO {
+	private static GiftDAO instance = new GiftDAO();
+	
+	public static GiftDAO getInstance() {
+		return instance;
+	}
+	
+	//생성자
+	public GiftDAO() {}
+	
+	//DB연결
+	public Connection getConnection() throws Exception{
+		Context ctx = new InitialContext();
+		DataSource ds = (DataSource)ctx.lookup("java:comp/env/jdbc:GiftDB");
+		DriverManager.setLogWriter(new PrintWriter(System.out));
+		return ds.getConnection();
+	}
+	
+	public selectAll(GiftVO vo) { 
+		Connection conn = null;
+		PreparedStatement pstmt =null;
+	}
+}

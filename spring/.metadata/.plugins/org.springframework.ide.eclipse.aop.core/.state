@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="sp02_basic_di"/>
+<aop-project name="sp04_java_annot"/>
+<aop-project name="sp04_annotation"/>
+<aop-project name="sp01_spring"/>
+<aop-project name="sp02_springMVC"/>
+<aop-project name="sp03_di"/>
+<aop-project name="sp03_quiz"/>
+</aop-reference-model>

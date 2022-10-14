@@ -1,0 +1,55 @@
+package ex02.quiz;
+
+
+public class StudentViewImpl {
+	private String school;
+	private String name, age, sex;
+	
+	//setter로 주입
+
+	public void Input() {
+		setSchool("삼육대학교");
+	}
+	
+	@Override
+	public void print() {
+		Input();
+		System.out.println("직업 : " + 	school);
+		System.out.println("이름 : " + name);
+		System.out.println("나이 : " + age);
+		System.out.println("성별 : " + sex);
+	}
+
+	public String getSchool() {
+		return school;
+	}
+
+	public void setSchool(String school) {
+		this.school = school;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = super.getName();
+	}
+
+	public String getAge() {
+		return age;
+	}
+
+	public void setAge(String age) {
+		this.age = super.getAge();
+	}
+
+	public String getSex() {
+		return sex;
+	}
+
+	public void setSex(String sex) {
+		this.sex = super.getSex();
+	}
+
+}

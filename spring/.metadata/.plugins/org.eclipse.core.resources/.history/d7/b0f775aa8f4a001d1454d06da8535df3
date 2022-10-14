@@ -1,0 +1,17 @@
+package ex03.di;
+
+public class PlayerImpl implements Player {
+
+	@Override
+	public void input() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void info() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

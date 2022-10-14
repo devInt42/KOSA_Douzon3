@@ -1,0 +1,318 @@
+package controller;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Scanner;
+import java.util.regex.Pattern;
+
+import dbConn.util.CloseHelper;
+import dbConn.util.ConnectionHelper;
+
+public class UserInfoController extends ParentsController {
+	static Scanner sc = new Scanner(System.in);
+	static Statement stmt = null;
+	static ResultSet rs = null;
+	static Connection conn = null;
+	static PreparedStatement pstmt = null;
+
+	public static void menuList() {
+		System.out.println("\n======= 회원 페이지=======");
+		System.out.println("\t 1. 내 정보 ");
+		System.out.println("\t 2. 내 구매목록");
+		System.out.println("\t 3. 내 판매목록 ");
+		System.out.println("\t 4. 회원탈퇴 ");
+		System.out.println("\t 5. 내 정보 수정 ");
+		System.out.println("\t 6. 내가 판매중인 물건 정보 수정 ");
+		System.out.println("\t 7. 이전 메뉴로 돌아가기 ");
+		System.out.println("\n======================\n");
+
+		System.out.print(">> 원하는 메뉴 선택하세요  : ");
+	}
+
+	public static void menu(String CNO) throws SQLException {
+		connect();
+		while (true) {
+			System.out.println();
+			menuList();
+			switch (sc.nextInt()) {
+			case 0:
+				System.out.println("Commit 하시겠습니까?(Y/N) ");
+				System.out.println("안하시려면 Rollback 됩니다. ");
+				if (sc.next().equalsIgnoreCase("Y")) {
+					commit(); // 예외발생
+				} else {
+					rollback();
+				}
+				break;
+
+			case 1:
+				selectMyInfo(CNO);
+				break;
+			case 2:
+				selectMyBuyList(CNO);
+				break;
+			case 3:
+				selectMySellList(CNO);
+				break;
+			case 4:
+				withdrawl(CNO);
+				break;
+			case 5:
+				updateMyInfo(CNO);
+				break;
+			case 6:
+				updateMySell(CNO);
+				break;
+			case 7:
+				MarketController.menu();
+				break;
+			default:
+				System.out.println("1~7번을 입력하세요.");
+				break;
+			}
+
+		}
+	}
+
+	public static void selectMyInfo(String CNO) throws SQLException { // 1.내정보
+
+		pstmt = conn.prepareStatement("SELECT * FROM CUSTOMER WHERE CNO = ?");
+		pstmt.setString(1, CNO);
+		rs = pstmt.executeQuery();
+
+		while (rs.next()) {
+			System.out.println("\n======= 내정보 ========");
+			System.out.println("회원번호\t :  " + CNO);
+			String CID = rs.getString(2);
+			System.out.println("아이디 \t :  " + CID);
+			String CNAME = rs.getString(3);
+			System.out.println("이름   \t :  " + CNAME);
+			String PWD = rs.getString(4);
+			System.out.println("비밀번호\t :  " + PWD);
+			String ADDR = rs.getString(5);
+			System.out.println("주소    \t :  " + ADDR);
+			String TEL = rs.getString(6);
+			System.out.println("전화번호\t :  " + TEL);
+			System.out.println("\n====================");
+
+		} // end while
+	}// end selectbygno
+
+	public static void selectMyBuyList(String CNO) throws SQLException { // 2. 내구매 목록
+
+		connect();
+		pstmt = conn.prepareStatement("SELECT * FROM TRADE WHERE B_CNO = ?");
+		pstmt.setString(1, CNO);
+		rs = pstmt.executeQuery();
+		System.out.println("\n=========== 내 구매목록 =============\n");
+		System.out.println("상품번호\t상품이름\t상품가격\t판매자");
+		while (rs.next()) {
+
+			int ino = rs.getInt(1);
+			String iname = rs.getString(2);
+			String iprice = rs.getString(3);
+			String Seller_CNO = rs.getString(4);
+			System.out.println(ino + " \t" + iname + " \t" + iprice + " \t" + Seller_CNO);
+		} // end while
+		System.out.println("\n=================================");
+
+	}
+
+	public static void selectMySellList(String CNO) throws SQLException { // 3.내 판매 목록
+		pstmt = conn.prepareStatement("SELECT * FROM ITEM WHERE SELLER_CNO = ?");
+		pstmt.setString(1, CNO);
+		rs = pstmt.executeQuery();
+
+		System.out.println("\n=========== 내 판매목록 =============\n");
+		System.out.println("상품번호\t상품이름\t상품가격\t판매자");
+		while (rs.next()) {
+
+			int ino = rs.getInt(1);
+			String iname = rs.getString(2);
+			String iprice = rs.getString(3);
+			String Seller_CNO = rs.getString(4);
+			System.out.println(ino + " \t" + iname + " \t" + iprice + " \t" + Seller_CNO);
+			System.out.println();
+
+		} // end while
+		System.out.println("\n=================================");
+
+	}
+
+	public static void withdrawl(String CNO) throws SQLException { // 4. 회원 탈퇴
+
+		try {
+			pstmt = conn.prepareStatement("DELETE CUSTOMER WHERE CNO = ?");
+			pstmt.setString(1, CNO);
+
+			System.out.println("정말 탈퇴하시겠습니까?(Y/N)");
+			if (sc.next().equalsIgnoreCase("Y")) {
+				// 예외발생
+				int result = pstmt.executeUpdate();
+				commit();
+				System.out.println("탈퇴되었습니다");
+			} else {
+				rollback();
+				System.out.println("롤백했습니다");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static void updateMyInfo(String CNO) throws SQLException { // 5. 내 정보 수정
+		a: while (true) {
+			selectMyInfo(CNO);
+			String modify = null;
+			commit();
+			System.out.println("0 선택 ==> update 탈출합니다.");
+
+			b: while (true) {
+				System.out.println("\n\n1.이름 \t 2.아이디\t3.비밀번호\t4.주소 \t 5.전화번호\t0.exit");
+				System.out.print("수정할 필드 : ");
+				int choice = sc.nextInt();
+				switch (choice) {
+
+				case 1:
+					System.out.print("바뀔 이름 : ");
+
+					Object sql = stmt
+							.execute("UPDATE CUSTOMER SET CNAME = '" + sc.next() + "' WHERE CNO = '" + CNO + "'");
+					System.out.println(sql);
+					break b;
+				case 2:
+
+					c: while (true) {
+						System.out.println("바뀔 아이디를 입력하시오. 영문자, 숫자가 각 1개 이상 포함된 8~16자리");
+						String CID = sc.next();
+
+						String pattern = "^(?=.*[a-zA-z])(?=.*[0-9]).{8,16}$";
+						boolean regex = Pattern.matches(pattern, CID);
+						if (!regex) {
+							System.out.println("아이디가 조건에 맞지 않습니다. 다시입력하시겠습니까?(Y/N)");
+							String ans = sc.next();
+							if (!ans.equalsIgnoreCase("Y")) {
+								rollback();
+								System.out.println("취소(롤백)했습니다");
+								break b;
+							} else {
+								continue;
+							}
+						}
+
+						else {
+							stmt.execute("UPDATE CUSTOMER SET CID = '" + CID + "' WHERE CNO = '" + CNO + "'");
+							System.out.println("변경성공");
+
+							break b;
+						}
+					}
+
+				case 3:
+					c: while (true) {
+						System.out.println("비밀번호 입력.영문자, 숫자,특수문자가 각 1개 이상 포함된 8~16자리");
+						String PWD = sc.next();
+						String pattern2 = "^(?=.*[a-zA-z])(?=.*[0-9])(?=.*[$`~!@$!%*#^?&\\\\(\\\\)\\-_=+]).{8,16}$";
+						boolean regex2 = Pattern.matches(pattern2, PWD);
+						if (!regex2) {
+							System.out.println("비밀번호가 조건에 맞지 않습니다. 다시입력하시겠습니까?(Y/N)");
+							String ans = sc.next();
+							if (!ans.equalsIgnoreCase("Y")) {
+
+								rollback();
+								System.out.println("취소(롤백)했습니다");
+								break b;
+							} else {
+								continue;
+							}
+						} else {
+							stmt.execute("UPDATE CUSTOMER SET PWD = '" + PWD + "' WHERE CNO = '" + CNO + "'");
+							System.out.println("변경성공");
+							break b;
+
+						}
+					}
+
+				case 4:
+					System.out.print("바뀔 주소 : ");
+					sc.nextLine();
+					stmt.execute("UPDATE CUSTOMER SET ADDR = '" + sc.nextLine() + "' WHERE CNO = '" + CNO + "'");
+					break b;
+				case 5:
+					System.out.print("바뀔 전화번호 : ");
+					sc.nextLine();
+					stmt.execute("UPDATE CUSTOMER SET TEL = '" + sc.nextLine() + "' WHERE CNO = '" + CNO + "'");
+					break b;
+
+				case 0:
+					break a;
+				default:
+					System.out.println("잘못된 번호");
+					break;
+				}
+
+				switch (choice) {
+				case 1:
+					modify = "이름";
+				case 2:
+					modify = "아이디";
+				case 3:
+					modify = "비밀번호";
+				case 4:
+					modify = "주소";
+				case 5:
+					modify = "전화번호";
+
+				}
+
+				System.out.println(modify + "수정이 완료됨");
+			}
+
+		}
+	}
+
+	public static void updateMySell(String CNO) throws SQLException { // 6 내가 판매중인 물건 목록 수정
+		a: while (true) {
+			selectMySellList(CNO);
+			String modify = null;
+			System.out.println("수정할 상품번호를 입력하세요.");
+			int INO = sc.nextInt();
+
+			System.out.println("0 선택 ==> update 탈출합니다.");
+
+			b: while (true) {
+				System.out.println("\n\n1.상품이름\t2.상품가격\t3.상품삭제  0.exit");
+				System.out.print("수정할 필드 : ");
+				int choice = sc.nextInt();
+				switch (choice) {
+
+				case 1:
+					System.out.print("바뀔 상품이름 : ");
+					Object sql = stmt.execute("update item set iname = '" + sc.next() + "' where ino = " + INO + "");
+					commit();
+					break;
+				case 2:
+					System.out.print("바뀔 상품가격 : ");
+					stmt.execute("update item set ADDR = '" + sc.nextInt() + "' where ino = " + INO + "");
+					commit();
+					break;
+				case 3:
+					System.out.print("삭제합니다 ");
+					stmt.execute("delete item where ino = " + INO + "");
+					commit();
+					break;
+				case 0:
+					break a;
+				default:
+					System.out.println("잘못된 번호");
+					break;
+				}
+			}
+		}
+	}
+
+}

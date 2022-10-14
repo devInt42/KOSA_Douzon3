@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<typeInfoHistroy>
+    <typeInfo handle="=sp02_basic_di/src=/optional=/true=/=/maven.pomderived=/true=/&lt;ex03.nonDI{IRecordView.java[IRecordView" modifiers="513" timestamp="1665537342379"/>
+    <typeInfo handle="=sp02_basic_di/src=/optional=/true=/=/maven.pomderived=/true=/&lt;ex03.nonDI{IRecord.java[IRecord" modifiers="513" timestamp="1665537060148"/>
+    <typeInfo handle="=sp03_di/src=/optional=/true=/=/maven.pomderived=/true=/&lt;ex01.di{IMessage.java[IMessage" modifiers="513" timestamp="1665542021780"/>
+    <typeInfo handle="=sp03_quiz/src=/optional=/true=/=/maven.pomderived=/true=/&lt;ex01.quiz{IScoreView.java[IScoreView" modifiers="513" timestamp="1665555339854"/>
+    <typeInfo handle="=sp03_quiz/src=/optional=/true=/=/maven.pomderived=/true=/&lt;ex02.quiz{IPersonView.java[IPersonView" modifiers="513" timestamp="1665559783670"/>
+    <typeInfo handle="=sp03_quiz/src=/optional=/true=/=/maven.pomderived=/true=/&lt;ex03.quiz{IPlayer.java[IPlayer" modifiers="513" timestamp="1665564645920"/>
+    <typeInfo handle="=sp03_di/C:\/Program Files\/Java\/jdk-11.0.15.1\/lib\/jrt-fs.jar`java.management=/maven.pomderived=/true=/=/javadoc_location=/https:\/\/docs.oracle.com\/en\/java\/javase\/11\/docs\/api\/=/&lt;java.lang.management(PlatformLoggingMXBean.class[PlatformLoggingMXBean" modifiers="1537" timestamp="1658797227921"/>
+    <typeInfo handle="=sp04_java_annot/C:\/Users\/KOSA\/.m2\/repository\/org\/springframework\/spring-beans\/5.1.3.RELEASE\/spring-beans-5.1.3.RELEASE.jar=/maven.pomderived=/true=/=/maven.pomderived=/true=/=/maven.groupId=/org.springframework=/=/maven.artifactId=/spring-beans=/=/maven.version=/5.1.3.RELEASE=/=/maven.scope=/compile=/&lt;org.springframework.beans.factory(InitializingBean.class[InitializingBean" modifiers="1537" timestamp="1665455275767"/>
+    <typeInfo handle="=sp04_java_annot/C:\/Program Files\/Java\/jdk-11.0.15.1\/lib\/jrt-fs.jar`java.naming=/maven.pomderived=/true=/=/javadoc_location=/https:\/\/docs.oracle.com\/en\/java\/javase\/11\/docs\/api\/=/&lt;javax.naming.spi(InitialContextFactory.class[InitialContextFactory" modifiers="1537" timestamp="1658797227921"/>
+    <typeInfo handle="=sp04_java_annot/C:\/Users\/KOSA\/.m2\/repository\/org\/springframework\/spring-beans\/5.1.3.RELEASE\/spring-beans-5.1.3.RELEASE.jar=/maven.pomderived=/true=/=/maven.pomderived=/true=/=/maven.groupId=/org.springframework=/=/maven.artifactId=/spring-beans=/=/maven.version=/5.1.3.RELEASE=/=/maven.scope=/compile=/&lt;org.springframework.beans.factory(DisposableBean.class[DisposableBean" modifiers="1537" timestamp="1665455275767"/>
+</typeInfoHistroy>

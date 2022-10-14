@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="gradeImpl" name="grade" class="ex01.quiz.GradeImpl">
+		<constructor-arg name="name" value="류정수"/>
+		<constructor-arg name="music" value="90" />
+		<constructor-arg name="art" value="88" />
+		<constructor-arg name="pe" value="66" />
+	</bean>
+</beans>

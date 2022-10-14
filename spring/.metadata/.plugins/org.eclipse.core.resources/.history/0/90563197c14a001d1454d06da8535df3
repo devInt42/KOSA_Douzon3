@@ -1,0 +1,43 @@
+package ex01.di.annot;
+
+import java.util.ArrayList;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class JavaConfig {
+	@Bean
+	public MyCats cat1() {
+		ArrayList<String> hobbys = new ArrayList();
+		hobbys.add("앞발들기");
+		hobbys.add("뒹굴기");
+		
+		MyCats myCats = new MyCats("냥이", 12, hobbys);
+		myCats.setWeight(3.0);
+		myCats.setColor("black");
+	
+		return myCats;
+	}
+	
+	
+	@Bean
+	public MyCats cat2() {
+		ArrayList<String> hobbys = new ArrayList();
+		hobbys.add("그루밍");
+		hobbys.add("뽁뽁이");
+		hobbys.add("물어버리기");
+
+		MyCats myCats = new MyCats("몬냥이", 12, hobbys);
+		myCats.setWeight(2.3);
+		myCats.setColor("cheeze");
+	
+		return myCats;
+	}
+	
+	public Cats catsInfo() {
+		Cats cats = new Cats(this.cat1());
+		return cats;
+	}
+	
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>address.html</title>
+<style type="text/css">
+div {
+	width: 500px;
+	height: 500px;
+	border : 1px solid #000;
+}
+</style>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script	src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+		$(":button").click(function() {
+			$.ajax({
+				url : "https://goo.gl/maps/oPkzKqsLvb5EpsfA9",
+				data : {
+					apikey:"9854529be7883dd186634663aad0a74c",
+					q:"강남",
+					result:10,
+					output:"json"
+				},
+				dataType : "jsonp",
+				success : function(jsonData) {
+					var itemList = jsonData.channel.item;
+					
+					for(var i = 0; i < itemList.length; i++) {
+						var item = itemList[i];
+						var link = item.link;
+						var title = item.title;
+						
+						$("#searchResult").append("<a href='" + link + "'>" + title + "</a>");
+						$("#searchResult").append("<br/>");
+					}
+					
+				}
+			})
+		})
+	});
+</script>
+</head>
+<body>
+	화면 꾸미기 지도 : 우리집 방문 (ajax 이용)
+	<input type = "button" id = "btn" value = "kosa 위치" />
+	<br><br>
+	<div id = "kosa"></div>
+</body>
+</html>

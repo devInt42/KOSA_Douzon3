@@ -1,0 +1,22 @@
+package ex01.nonDI;
+
+public class NewRecordView  {
+
+	private NewRecord  record;
+
+	// 필요한 객체를 [생성자]를 통해서 주입 받아서 사용
+	// 두 객체의 lifecycle이 동일
+	public NewRecordView(int kor, int eng, int com, int math) {
+		record = new NewRecord(kor, eng, math, com);
+	}
+	
+	public void print() {
+		System.out.println("KOR : " + record.getKor());
+		System.out.println(record.total() + "  /   " + record.avg());
+		System.out.println("==============================");
+		record.disp();
+	}
+	
+	
+	
+}

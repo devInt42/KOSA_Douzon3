@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ex08_구조분해할당.html</title>
+</head>
+<body>
+
+	<h2>구조 분해 할당</h2> <hr>
+	<input type ="text" required>
+
+</body>
+</html>

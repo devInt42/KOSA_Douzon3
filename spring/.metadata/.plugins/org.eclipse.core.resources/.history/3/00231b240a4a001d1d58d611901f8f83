@@ -1,0 +1,11 @@
+package ex02.quiz;
+
+public class EmployeeView implements IPersonView {
+
+	@Override
+	public void print() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

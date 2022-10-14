@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="ImportExportAction">
+		<item key="ImportExportPage.STORE_SELECTED_EXPORT_WIZARD_ID" value="org.eclipse.ui.wizards.export.ZipFile"/>
+		<item key="ImportExportPage.STORE_SELECTED_IMPORT_WIZARD_ID" value="org.eclipse.ui.wizards.import.ZipFile"/>
+		<list key="ImportExportPage.STORE_EXPANDED_EXPORT_CATEGORIES">
+			<item value="org.eclipse.ui.Basic"/>
+		</list>
+		<list key="ImportExportPage.STORE_EXPANDED_IMPORT_CATEGORIES">
+			<item value="org.eclipse.ui.Basic"/>
+		</list>
+	</section>
+	<section name="ZipFileExportWizard">
+		<item key="WizardZipFileResourceExportPage1.STORE_CREATE_STRUCTURE_ID" value="true"/>
+		<item key="WizardZipFileResourceExportPage1.STORE_COMPRESS_CONTENTS_ID" value="true"/>
+		<list key="WizardZipFileResourceExportPage1.STORE_DESTINATION_NAMES_ID">
+			<item value="C:\더존비즈온\data\1TEAM_Project.zip"/>
+			<item value="C:\더존비즈온\data\Project(최종본2).zip"/>
+			<item value="C:\더존비즈온\data\Project(최종본).zip"/>
+			<item value="C:\더존비즈온\data\Project_0908.zip"/>
+			<item value="C:\더존비즈온\data\Project_0907(최종).zip"/>
+			<item value="C:\더존비즈온\data\Project_0907.zip"/>
+			<item value="C:\더존비즈온\data\Project_0906.zip"/>
+			<item value="C:\더존비즈온\data\류정수_905.zip"/>
+			<item value="C:\더존비즈온\data\류정수_902.zip"/>
+			<item value="C:\더존비즈온\data\류정수_819.zip"/>
+			<item value="C:\더존비즈온\data\류정수_728.zip"/>
+			<item value="C:\더존비즈온\data\728.zip"/>
+		</list>
+	</section>
+	<section name="NewWizardAction">
+		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="org.eclipse.jdt.ui.wizards.NewClassCreationWizard"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="org.eclipse.jdt.ui.java"/>
+			<item value="org.eclipse.jpt.jaxb"/>
+		</list>
+	</section>
+	<section name="FileSystemImportWizard">
+	</section>
+	<section name="ZipFileImportWizard">
+		<item key="WizardZipFileResourceImportPage1.STORE_OVERWRITE_EXISTING_RESOURCES_ID" value="false"/>
+		<list key="WizardZipFileResourceImportPage1.STORE_SOURCE_NAMES_ID">
+			<item value="C:\Users\KOSA\Documents\카카오톡 받은 파일\day13.zip"/>
+		</list>
+	</section>
+</section>

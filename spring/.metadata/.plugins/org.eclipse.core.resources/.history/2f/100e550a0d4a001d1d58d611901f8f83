@@ -1,0 +1,11 @@
+package ex03.quiz;
+
+public class BascketballViewImpl implements IPlayer {
+
+	@Override
+	public void print() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,15 @@
+package spring;
+
+public class Client2 {
+	
+	private String host;
+
+	public Client2(String host) {
+		this.host = host;
+		System.out.println("Client2.setHost() call : " + host);
+	}
+	
+	
+	
+	
+}

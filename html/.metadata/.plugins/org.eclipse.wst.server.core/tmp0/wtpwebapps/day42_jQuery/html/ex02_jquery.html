@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ex02_jquery.html</title>
+
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+
+<script defer type="text/javascript">
+ 
+ $(document).ready(function() {
+	/*  $( '#target' ).focus(function() {
+		  alert( "Handler for .focus() called." );
+	}); */
+	 $( "#other" ).click(function() {
+		  $( "#target" ).focus();
+	});
+ });
+ </script>
+</head>
+<body>
+	<form>
+		<input id="target" type="text" value="Field 1"> <input
+			type="text" value="Field 2">
+	</form>
+	<div id="other">Trigger the handler</div>
+</body>
+</html>

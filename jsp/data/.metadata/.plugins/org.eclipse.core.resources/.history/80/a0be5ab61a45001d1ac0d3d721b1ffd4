@@ -1,0 +1,6 @@
+package edu.kosa.model;
+
+public class giftVO {
+	private int gno, g_start, g_end;
+	private String gname;
+}

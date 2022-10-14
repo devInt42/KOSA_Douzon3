@@ -1,0 +1,21 @@
+
+10월 11, 2022 12:27:52.754 NEW SESSION
+10월 11, 2022 12:27:52.754 [17300:10676:1011/122752.746:ERROR:device_event_log_impl.cc(214)] [12:27:52.747] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+10월 11, 2022 12:28:45.575 [14812:6604:1011/122845.575:ERROR:device_event_log_impl.cc(214)] [12:28:45.575] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+10월 11, 2022 12:29:18.455 [6384:13828:1011/122918.455:ERROR:device_event_log_impl.cc(214)] [12:29:18.454] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+10월 11, 2022 12:30:16.427 [6384:10604:1011/123016.426:ERROR:util.cc(129)] Can't create base directory: C:\Program Files\Google\GoogleUpdater
+10월 11, 2022 12:53:52.720 [6384:13908:1011/125352.719:ERROR:cert_verify_proc_builtin.cc(700)] CertVerifyProcBuiltin for beacons.gcp.gvt2.com failed:
+10월 11, 2022 12:53:52.721 ----- Certificate i=0 (CN=*.gcp.gvt2.com) -----
+10월 11, 2022 12:53:52.722 ERROR: Time is after notAfter
+10월 11, 2022 12:53:52.723 
+10월 11, 2022 12:53:52.723 
+10월 11, 2022 14:08:52.948 [6384:14932:1011/140852.947:ERROR:cert_verify_proc_builtin.cc(700)] CertVerifyProcBuiltin for beacons.gcp.gvt2.com failed:
+10월 11, 2022 14:08:52.949 ----- Certificate i=0 (CN=*.gcp.gvt2.com) -----
+10월 11, 2022 14:08:52.950 ERROR: Time is after notAfter
+10월 11, 2022 14:08:52.951 
+10월 11, 2022 14:08:52.951 
+10월 11, 2022 15:01:06.776 [6384:8168:1011/150106.775:ERROR:cert_verify_proc_builtin.cc(700)] CertVerifyProcBuiltin for e2c27.gcp.gvt2.com failed:
+10월 11, 2022 15:01:06.777 ----- Certificate i=0 (CN=*.gcp.gvt2.com) -----
+10월 11, 2022 15:01:06.778 ERROR: Time is after notAfter
+10월 11, 2022 15:01:06.778 
+10월 11, 2022 15:01:06.779 

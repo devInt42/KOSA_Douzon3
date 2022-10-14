@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<title>ex06_class.html</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+<link href="../css/main.css" rel="stylesheet" >
+<!-- <script defer src="../js/main6.js" type="text/javascript"></script> -->
+<script defer src="../js/main7.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+	//배열처리 []
+	let arr1 = [];
+	document.writeln('arr[0] : ' + arr[0] + '<br />');
+	
+	const num = 10;  // number
+	const str = 'javascript';  // string
+	document.writeln('num :'+num +'<br />');
+	const point = { x: 100,  y: 500 };  // object
+	const arr = [1, 2, 3, 4, 5];   // array
+	// function
+	const plus = function(su1, su2) { 
+		return su1 + su2;
+	}
+	function sum(x, y) {
+		document.write(x + y)
+	}
+	const add = (su1, su2 ) => su1 + su2;  
+
+	document.writeln('num : ' +num+'<br />');
+	document.writeln('str : ' +str+'<br />');
+	document.writeln('point.x : ' +point.x+'<br />');
+	document.writeln('point["y"] : ' +point["y"]+'<br />');
+	
+	document.writeln('arr[0] : ' +arr[0]+'<br />');  // 1
+	document.writeln('arr[3] : ' +arr[3]+'<br />');  // 4
+	
+	document.writeln('plus : ' +plus+'<br />');   // 함수 원형이 텍스트로 출력됨
+	document.writeln('plus : ' +plus()+'<br />');  // NaN
+	document.writeln('plus(3, 5) : ' +plus(3, 5)+'<br />');   // 함수호출
+
+	
+</script>
+</head>
+<body>
+	<h2 onclick="fn()">Class </h2>
+	<ul></ul>
+</body>
+</html>

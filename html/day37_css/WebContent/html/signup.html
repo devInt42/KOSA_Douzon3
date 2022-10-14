@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet"  href="../css/signup.css"> 
+<title>회원 정보 입력</title>
+</head>
+<body>
+<div>회원 정보 입력</div>
+<hr>
+<form action="" method="get">
+	<table>
+		<tr>
+			<td id="category"><span>*</span>ID</td><td><input type = "text" placeholder ="ID입력"></td>
+		</tr>
+		<tr>
+			<td id="category"><span>*</span>Password</td><td><input type = "password" placeholder ="Password 입력"></td>
+		</tr>
+		<tr>
+			<td id="category"><span>*</span>Password 확인</td><td><input type = "password" placeholder ="Password 재입력"></td>
+		</tr>
+		<tr>
+			<td id="category"><span>*</span>이 름</td><td><input type = "text" placeholder ="이름 입력"></td>
+		</tr>
+		<tr>
+			<td id="category"><span>*</span>전화번호</td>
+			<td>
+				<select id = "phone">
+				<option>010</option>
+				<option>011</option>
+				<option>016</option>
+				<option>017</option>
+				<option>019</option>
+				</select>&nbsp;-&nbsp;
+				<input type = "text" maxlength = "4" id = "phone" >&nbsp;-&nbsp;
+				<input type = "text" maxlength = "4" id = "phone">			
+			</td>
+		</tr>
+		<tr>
+			<td id="category">직 업</td>
+			<td>
+				<select>
+				<option>직업 선택</option>
+				<option>개발자</option>
+				<option>DBA</option>
+				<option>PM</option>
+				<option>영업사원</option>
+				<option>경리</option>
+				</select>
+			</td>
+		</tr>		
+		<tr>
+			<td id="category">성 별</td>
+			<td>
+			<input type = "radio" name="sex" checked> 남자
+			<input type = "radio" name="sex" > 여자
+			</td>
+		</tr>
+		<tr>
+			<td id="category">취 미</td>
+			<td>
+			<input type = "checkbox" name="hobby" > 독서
+			<input type = "checkbox" name="hobby" > 수영
+			<input type = "checkbox" name="hobby" > 게임
+			<input type = "checkbox" name="hobby" > 영화감상
+			<input type = "checkbox" name="hobby" > 음악듣기
+			</td>
+		</tr>
+		<tr>
+			<td id="category">자기소개</td>
+			<td><textarea rows="5" cols="55">자기소개 기재란</textarea></td>
+		</tr>
+		<tr>
+			<td colspan="2" id="category">
+				<input type = "button" value = "제출">&nbsp;&nbsp;
+				<input type = "button" value = "취소">
+			</td>
+		</tr>
+	</table><br>
+	
+	
+</form>
+</body>
+</html>
