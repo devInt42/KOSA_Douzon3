@@ -14,11 +14,12 @@ public class ListController implements Controller {
 		
 		ModelAndView  mav = new ModelAndView();
 		
-		mav.addObject("list", "List Page 입니다");  // data save
-		mav.addObject("title", "Title 입니다"); 
-		mav.addObject("content", "Content 입니다");
+		mav.addObject("list", "List Page22 입니다");  // data save
+		mav.addObject("title", "Title222 입니다"); 
+		mav.addObject("content", "Content22 입니다");
 		
-		mav.setViewName("/views/list.jsp");  // move view page
+		//mav.setViewName("/views/list.jsp");  // move view page
+		mav.setViewName("list");  //  /WEB-INF/views/ + list + .jsp
 		
 		return mav;
 	}

@@ -8,4 +8,6 @@
 	<!-- 사용자 클래스 객체 생성 -->
 	<bean class="kr.edu.kosa.HelloController"  name="/hello.bo"   />
 	<bean class="kr.edu.kosa.ListController"  name="/list.bo"   />
+		<bean class="kr.edu.kosa.WriteController"  name="/write.bo"   />
+	
 </beans>

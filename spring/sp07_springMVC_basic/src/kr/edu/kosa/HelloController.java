@@ -20,10 +20,11 @@ public class HelloController implements Controller {
 		
 		//1. 
 		ModelAndView  mav = new ModelAndView();
-		mav.addObject("nickname", "kingsmile");   // data save
-		mav.setViewName("/views/hello.jsp");       // move view page
+		mav.addObject("nickname", "ø’¿«πÃº“");   // data save
+		//mav.setViewName("/views/hello.jsp");       // move view page
 		
-
+		mav.setViewName("hello");  //  /WEB-INF/views/hello.jsp
+		
 		return mav;
 	}
 
