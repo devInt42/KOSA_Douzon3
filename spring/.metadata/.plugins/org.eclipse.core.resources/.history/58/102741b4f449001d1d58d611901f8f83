@@ -1,6 +1,0 @@
-package ex01.quiz;
-
-public interface IGrade {
-	int total();
-	double avg();
-}

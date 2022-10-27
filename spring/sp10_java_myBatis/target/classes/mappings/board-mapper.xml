@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- board-mapper.xml   DML 명령어 -->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+ 	
+ <mapper namespace="BoardDAO">
+ 
+ 	<delete id="deleteBoard" parameterType="int">
+		delete mybatisBoard  where seq=#{seq}
+	</delete>
+ 
+ 	<update id="updateBoard"  parameterType="board">
+ 		update mybatisBoard set title=#{title}, content=#{content} where seq=#{seq}
+ 	</update>
+	
+	<select id="getBoard"  resultType="board" parameterType="int" >
+		select * from mybatisBoard where seq = #{seq}
+	</select>
+	
+	<select id="getBoardList"  resultType="board" >
+		select * from mybatisBoard
+	</select>
+	
+	<select id="getBoardSearch"  resultType="board" >
+		select * from mybatisBoard
+			where ${searchCondition} like '%' || #{searchKeyword} || '%'
+			<!-- where ${컬럼명} like '%' || #{값} || '%' -->
+			order by seq desc
+	</select>
+	
+	<insert id="insertBoard">
+		insert into mybatisBoard(seq, title, writer, content, regdate, readcount) 
+		values( board_seq.nextval, #{title}, #{writer}, #{content}, sysdate, 0 )
+	</insert>
+	
+ 
+ </mapper>

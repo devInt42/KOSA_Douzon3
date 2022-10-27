@@ -1,0 +1,13 @@
+create table mybatisBoard(
+    seq number,
+    title varchar2(50),
+    writer  varchar2(30),
+    content varchar2(200),
+    regdate date,
+    readcount number
+);
+
+create SEQUENCE board_seq;
+insert into mybatisBoard values(board_seq.nextval, 'title', 'writer', 'contents', sysdate,0);
+commit; 
+select*from mybatisBoard;

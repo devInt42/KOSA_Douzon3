@@ -1,5 +1,0 @@
-package ex02.quiz;
-
-public interface EmployeeView extends IPersonView {
-
-}

@@ -1,0 +1,7 @@
+create table usermember(
+    id  varchar2(20),
+    name varchar2(20),
+    pwd varchar2(20),
+    email varchar2(30),
+    age int
+);

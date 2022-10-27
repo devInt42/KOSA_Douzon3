@@ -1,7 +1,0 @@
-package ex01.quiz;
-
-public interface IGrade {
-	display(){
-		
-	}
-}

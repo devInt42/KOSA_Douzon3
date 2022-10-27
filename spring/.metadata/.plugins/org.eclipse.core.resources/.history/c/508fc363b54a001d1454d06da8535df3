@@ -1,7 +1,0 @@
-package spring;
-
-public class Client2 {
-	
-	private String host;
-	this.host = host;
-}

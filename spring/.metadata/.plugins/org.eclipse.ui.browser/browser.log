@@ -19,3 +19,12 @@
 10월 11, 2022 15:01:06.778 ERROR: Time is after notAfter
 10월 11, 2022 15:01:06.778 
 10월 11, 2022 15:01:06.779 
+
+10월 18, 2022 11:57:00.487 NEW SESSION
+10월 18, 2022 11:57:00.487 [11108:11100:1018/115700.486:ERROR:device_event_log_impl.cc(214)] [11:57:00.486] Bluetooth: bluetooth_adapter_winrt.cc:1074 Getting Default Adapter failed.
+10월 18, 2022 11:57:58.490 [11108:7260:1018/115758.490:ERROR:util.cc(129)] Can't create base directory: C:\Program Files\Google\GoogleUpdater
+10월 18, 2022 12:00:39.309 [11108:8876:1018/120039.308:ERROR:cert_verify_proc_builtin.cc(670)] CertVerifyProcBuiltin for e2c34.gcp.gvt2.com failed:
+10월 18, 2022 12:00:39.309 ----- Certificate i=0 (CN=*.gcp.gvt2.com) -----
+10월 18, 2022 12:00:39.309 ERROR: Time is after notAfter
+10월 18, 2022 12:00:39.309 
+10월 18, 2022 12:00:39.309 

@@ -1,8 +1,0 @@
-package ex01.quiz;
-
-public interface IGrade {
-	private String name;
-	private int music, art, pe, tot;
-	private double avg;
-	
-}

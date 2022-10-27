@@ -1,7 +1,0 @@
-package ex01.di;
-
-public class MainEntry {
-	public static void main(String[] args) {
-
-	}
-}

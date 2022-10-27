@@ -1,0 +1,21 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>joinForm</title>
+</head>
+<body>
+	<form action="join.kosa" method = "post">
+	ID : <input type = "text" name = "id"/><br/>
+	Name :  <input type = "text" name = "name"/><br/>
+	PassWD : <input type = "password" name = "pwd"/><br/>
+	Email :  <input type = "email" name = "email"/><br/>
+	Age :  <input type = "number" name = "age"/><br/>
+	
+	<input type = "submit" value = "가입">&nbsp;&nbsp;<input type = "reset" value = "취소">
+	
+	</form>
+</body>
+</html>
