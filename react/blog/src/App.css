@@ -1,0 +1,19 @@
+.App {
+  text-align: flex;
+  margin-left: 10px;
+}
+
+.nav {
+  background: green;
+  margin-left: 10px;
+  width: 100%;
+  display: flex;
+  color: yellow;
+  padding: 20px;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.title {
+  font-size: 20px;
+}
