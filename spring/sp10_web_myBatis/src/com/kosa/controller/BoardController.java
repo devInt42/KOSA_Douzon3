@@ -44,7 +44,6 @@ public class BoardController extends HttpServlet {
 		
 		BoardDAO dao = new BoardDAO();
 		List<BoardDTO>  list = dao.selectAll();
-		
 		if( list != null ) {
 			request.setAttribute("list", list);  // data save
 			request.getRequestDispatcher("/views/list.jsp").forward(request, response);

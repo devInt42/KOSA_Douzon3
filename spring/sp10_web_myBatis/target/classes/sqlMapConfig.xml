@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- sqlMapConfig.xml DB 연결 및 매퍼 위치 설정-->
+<!-- sqlMapConfig.xml DB 연결 및 매퍼 위치 설정 -->
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	 "http://mybatis.org/dtd/mybatis-3-config.dtd">
-	 
+
 <configuration>
 	<!-- Properties 파일 설정 -->
-	<properties resource="com/kosa/config/oracledb.properties" />
-	
+	<properties resource="com/kosa/config/mariadb.properties" />
+<!-- 	<properties resource="com/kosa/config/oracledb.properties" />
+ -->
 	<!-- Alias 설정 -->
 	<typeAliases>
-		<typeAlias  alias="dto"  type="com.kosa.model.BoardDTO"  />
+		<typeAlias alias="dto" type="com.kosa.model.BoardDTO" />
 	</typeAliases>
 
 	<!-- DataSource 설정 -->
@@ -24,7 +25,7 @@
 			</dataSource>
 		</environment>
 	</environments>
-	
+
 	<!-- SQL Mapper 설정 -->
 	<mappers>
 		<mapper resource="sqlMapper/boardmapper.xml" />
