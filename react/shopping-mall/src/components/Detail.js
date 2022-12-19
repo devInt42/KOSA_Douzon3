@@ -1,13 +1,12 @@
 /* eslint-disable */
 
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Button, Nav } from "react-bootstrap";
+import { useDispatch } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import styled from "styled-components";
-import Cart from "./Cart";
-//import '../css/Detail.scss'
-
-
+import { StockContext } from '../App'
+import {  addItem } from "../store";
 
 
 let ColorBtn = styled.button`
@@ -23,8 +22,10 @@ let UseDiv = styled.div`
       padding: 20px;
     `
 
+
 function Detail(props) {
 
+  let {stock} = useContext(StockContext);
    
   //setTimeout(() => {실행 코드}, 시간)
   
@@ -36,6 +37,16 @@ function Detail(props) {
   //console.log(findId);
   let [count, setCount] = useState(0);
   let [alert2, setAlert2] = useState(true);
+
+  //최근 본 상품 목록 저장
+  useEffect(()=>{
+    let outData = localStorage.getItem('watched')  // App.js에 셋팅 되어 있는것 꺼내옴 
+    outData = JSON.parse(outData) // JSON -> array
+    outData.push(findId.id)   
+    outData = new Set(outData)  // 중복제거
+    outData = Array.from(outData) // set --> array 
+    localStorage.setItem('watched', JSON.stringify(outData))
+  }, [])
 
   useEffect(() => {
     //setTimeout(() => {   }, timeout);
@@ -64,6 +75,8 @@ function Detail(props) {
   //   }, 2000);
   // })
 
+  let dispatch = useDispatch();
+
   return(
     <div className='container'> 
      {/* {count}<button onClick={()=>{ setCount(count+1)}}>버튼</button> */}
@@ -73,6 +86,8 @@ function Detail(props) {
           <p>재고가 얼마 남지 않았습니다.</p>
         </div>
       ) : null}
+
+      {/* {stock} */}
 
        <div className='row'>
         <div className="col-md-6">  
@@ -95,6 +110,8 @@ function Detail(props) {
           
             <button className='btn btn-danger' 
               onClick={()=>{
+                //dispatch(addItem(`{id : ${findId.id}, name : ${findId.title}, count : ${e.target.value}}`)) 
+                dispatch(addItem({id : 3, name : 'Black and White', count : 1})) 
                 navigate('/cart')
               }}>주문하기</button>&nbsp;
           
@@ -117,38 +134,58 @@ function Detail(props) {
         </Nav.Item>
       </Nav> 
 
-      <TabContent clickTab={clickTab} /> 
+      <TabContent clickTab={clickTab} shrits={ props.shrits }/> 
 
     </div>
   );
 }
 
-function TabContent(props) {
-//function TabContent({clickTab}) {
+//function TabContent(props) {
+function TabContent({clickTab, shrits}) {
 
     // return (
     //   <div>
-    //     [<div>내용0</div>, <div>내용1</div>, <div>내용2</div>][clickTab]
+    //     [<div>내용0</div>, <div>내용1</div>, <div>내용2</div>][props.clickTab]
     //     {/* {shrits[0].title} */}
     //   </div>
     // )
 
+  let {stock} = useContext(StockContext)
+  let [fade, setFade] = useState('')
+
+  useEffect(()=>{
+    setTimeout(() => {  setFade('end') }, 10);
+    return()=>{  setFade('') }
+  }, [clickTab])
+
+
+  // useEffect(()=>{
+  //   let t = setTimeout(() => {  setFade('end') }, 30);
+  //   return()=>{
+  //     clearTimeout(t)
+  //     setFade('')
+  //   }
+  // }, [clickTab])
+
   return (
-      <div className="start end">
-        {[<div>내용0</div>, <div>내용1</div>, <div>내용2</div>][props.clickTab]}
+      // <div className= {"start" + fade} >
+      <div className= {`start  ${fade}`} >
+        {/* {shrits[0].title } {shrits[0].price } */}
+        {[<div>내용0</div>, <div>내용1</div>, <div>내용2</div>][clickTab]}
+        {/* {stock[1]}   */}
       </div>
-    )
+  )
     
 
-    // if(clickTab == 0 ) {
-    //   return <div>내용0</div>  
-    // }
-    // if(clickTab == 1 ) {
-    //   return  <div>내용1</div>  
-    // }
-    // if(clickTab == 2 ) {
-    //   return <div>내용2</div>  
-    // }
+  // if(clickTab == 0 ) {
+  //   return <div>내용0</div>  
+  // }
+  // if(clickTab == 1 ) {
+  //   return  <div>내용1</div>  
+  // }
+  // if(clickTab == 2 ) {
+  //   return <div>내용2</div>  
+  // }
 
 }
 
